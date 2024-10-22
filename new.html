@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.tailwindcss.com;"> -->
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container bg-white shadow-lg rounded-lg p-8 max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">PASSWORD GENERATOR</h1>
+        
+        <div class="display-container mb-4 flex items-center justify-between">
+            <input id="passwd_display" type="text" placeholder="Password" class="display w-full p-2 border border-gray-300 rounded mr-2" data-passwordDisplay>
+            <button onclick="copyText()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+                <span data-copyMsg></span>
+                <i class="fa-regular fa-copy"></i>
+            </button>     
+            
+            <!--  -->
+            <div id="toast" class="toast fixed bottom-5 right-5 bg-green-500 text-white p-3 rounded opacity-0 pointer-events-none">
+                Copied!
+            </div>
+        </div>
+
+        <div class="input-container space-y-4">
+            <div class="length-container flex justify-between items-center">
+                <p class="font-medium">Password Length</p>
+                <p data-lengthNumber class="font-bold">0</p>
+            </div>
+
+            <!-- Slider -->
+            <input type="range" name="" id="" min="1" max="20" class="slider w-full" step="1" data-lengthSlider>
+            
+            <!-- Checkbox -->
+            <div class="flex items-center">
+                <input type="checkbox" name="" id="uppercase" class="mr-2">
+                <label for="uppercase" class="font-medium">Includes Uppercase Letters</label>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" name="" id="lowercase" class="mr-2">
+                <label for="lowercase" class="font-medium">Includes Lowercase Letters</label>
+            </div>
+        
+            <div class="flex items-center">
+                <input type="checkbox" name="" id="numbers" class="mr-2">
+                <label for="numbers" class="font-medium">Includes Numbers</label>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" name="" id="symbols" class="mr-2">
+                <label for="symbols" class="font-medium">Includes Symbols</label>
+            </div>
+        
+            <!-- Strength section -->
+            <div class="strength-container flex justify-between items-center">
+                <p class="font-medium">Strength</p>
+                <div data-indicator class="w-1/2 h-2 bg-gray-300 rounded"></div>
+            </div>
+
+            <!-- Generate password -->
+            <button class="generateButton w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Generate Password</button>
+        </div>
+    </div>
+     
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
